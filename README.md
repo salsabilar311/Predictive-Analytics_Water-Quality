@@ -2,86 +2,53 @@
 
 ## Domain Proyek
 
-Kualitas air adalah salah satu problem yang sering terjadi di
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+Kualitas air adalah salah satu problem yang sering terjadi saat ini. Kualitas air dipengaruhi oleh beberapa faktor yaitu pencemaran udara, aktivitas pertanian, pencemaran industri dll. Oleh karena itu dibutuhkan upaya serius dan terkoordinasi untuk mengatasi tantangan kualitas air ini. Disinilah peran proyek yang saya buat berfungsi untuk memprediksi kualitas air dan menggabungkan kecerdasan buatan serta analisis data untuk memberikan solusi inovatif. Dengan memanfaatkan model prediktif, proyek ini dapat memberikan pemahaman mendalam tentang faktor-faktor yang memengaruhi kualitas air.
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
+Proyek ini bertujuan untuk mengetahui faktor faktor yang mempengaruhi kualitas air. Faktor-faktor tersebut juga menentukan apakah air dapat dikonsumsi atau tidak oleh manusia. Sehingga, pemahaman mendalam terhadap faktor-faktor yang mempengaruhi kualitas air menjadi krusial dalam menentukan apakah air tersebut aman untuk dikonsumsi oleh manusia.
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Dari serangkaian fitur yang ada, fitur apa yang paling berpengaruh terhadap keamanan air untuk dikonsumsi?
+- Apakah semua fitur mempengaruhi tingkat kelayakan konsumsi air?
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+- Mengetahui fitur yang paling berkorelasi dengan kelayakan konsumsi air.
+- Membuat model machine learning yang dapat memprediksi apakah air layak diminum atau tidak berdasarkan fitur-fitur yang ada.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Data yang digunakan untuk proyek ini diambil dari [Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability). Data ini memiliki 3277 sample dan merupakan data numerik.
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Variabel-variabel pada Water Quality dataset adalah sebagai berikut:
+- pH: pH air 1. (0 hingga 14).
+- Hardness: Kapasitas air untuk mengendapkan sabun dalam mg/L.
+- Solids: Total padatan terlarut dalam ppm.
+- Chloramines: Jumlah Kloramin dalam ppm.
+- Sulfate: Jumlah Sulfat yang dilarutkan dalam mg/L.
+- Conductivity: Konduktivitas listrik air dalam μS/cm.
+- Organic_carbon: Jumlah karbon organik dalam ppm.
+- Trihalomethanes: Jumlah Trihalometana dalam μg/L.
+- Turbidity: Ukuran properti pemancar cahaya air dalam NTU.
+- Potability: Menunjukkan apakah air aman untuk dikonsumsi manusia. Dapat diminum -1 dan Tidak dapat diminum -0
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+- Membuang missing value
+- Menghapus outlier
+- Pembagian dataset dengan fungsi train_test_split dari library sklearn.
+- Normalisasi menggunakan StandardScaler
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Pada proses modeling ini saya menggunakan 3 algoritma yaitu :
+1. KKN
+2. Random forest
+3. Naive bayes
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Metrik evaluasi yang digunakan adalah accuracy. Karena ini merupakan masalah klasifikasi jadi saya menggunakan accuracy sebagai metrik evaluasi. Berdasarkan proses modeling didapat hasil:
+| KNN | Random Forest | Naive Bayes |
+|:--------------:|:--------------:|:--------------:|
+| 0.57 | 0.58    | 0.41   |
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Dapat dilihat dari tabel diatas bahwa algoritma random forest memiliki skor accuracy yang terbesar yaitu **0.58**. Oleh karena itu random forest adalah algoritma yang akan digunakan untuk melakukan prediksi selanjutnya. Namun, untuk pengembangan proyek lebih lanjut, diperlukan evaluasi yang lebih mendalam terhadap kinerja model random forest ini. Meskipun skor akurasi dapat memberikan gambaran umum tentang seberapa baik model melakukan prediksi, beberapa metrik evaluasi tambahan perlu dipertimbangkan. 
