@@ -8,11 +8,11 @@ Disinilah peran proyek yang saya buat berfungsi, dengan fokus pada pengembangan 
 - Dengan memastikan akses terhadap air minum yang aman, proyek ini dapat secara langsung meningkatkan kesehatan masyarakat, mengurangi risiko penyakit terkait air.
 - Model dapat diterapkan secara berskala besar untuk memantau kualitas air di berbagai daerah, memberikan pemahaman yang lebih baik tentang kondisi air di suatu wilayah.
 
-Model ini akan menggunakan dataset besar yang mencakup berbagai parameter kualitas air, seperti ph, hardness, solids, chloramines dll. Model machine learning akan dilatih dengan menggunakan berbagai macam algoritma machine learning. Seperti KNN, random forest dan naive bayes. Hasil akhir dari model ini adalah model yang dapat memprediksi apakah air layak diminum atau tidak berdasarkan faktor-faktor tertentu. Untuk menerapkannya pada masyarakat, user memerlukan sebuah data kualitas air yang berisi beberapa parameter pengukur. Lalu user dapat memasukkan data tersebut ke model yang sudah dilatih. Model akan melakukan prediksi dan menghasilkan output berupa layak atau tidak layak air untuk diminum. Hal itu sangat berguna bagi masyarakat karena dengan data yang mereka punya mereka dapat mengetahui tingkat kelayakan air untuk diminum.
+Model ini akan menggunakan dataset besar yang mencakup berbagai parameter kualitas air, seperti ph, hardness, solids, chloramines dll. Model machine learning akan dilatih dengan menggunakan berbagai macam algoritma machine learning. Seperti KNN, random forest dan naive bayes. Hasil akhir dari model ini adalah model yang dapat memprediksi apakah air layak diminum atau tidak berdasarkan faktor-faktor tertentu. Untuk menerapkannya pada masyarakat, user memerlukan sebuah data kualitas air yang berisi beberapa parameter pengukur. Lalu user dapat memasukkan data tersebut ke model yang sudah dilatih. Model akan melakukan prediksi dan menghasilkan output berupa layak atau tidak layak air untuk diminum. Diharapkan model ini mampu memprediksi kelayakan air minum sesuai dengan parameter yang ada. Prediksi ini nantinya dijadikan acuan bagi masyarakat dalam menentukan apakah air dapat diminum atau tidak.
 
 ## Business Understanding
 
-Proyek ini bertujuan untuk mengetahui faktor faktor yang mempengaruhi kualitas air. Faktor-faktor tersebut juga menentukan apakah air dapat dikonsumsi atau tidak oleh manusia. Sehingga, pemahaman mendalam terhadap faktor-faktor yang mempengaruhi kualitas air menjadi krusial dalam menentukan apakah air tersebut aman untuk dikonsumsi oleh manusia. Keberhasilan proyek ini dapat menciptakan dampak positif yang signifikan, baik dari segi kesehatan masyarakat, ekonomi, bisnis, maupun lingkungan. Beberapa dampak yang dapat diantisipasi meliputi:
+Proyek ini bertujuan untuk mengetahui faktor faktor yang mempengaruhi kualitas air. Faktor-faktor tersebut juga menentukan apakah air dapat dikonsumsi atau tidak oleh manusia. Sehingga, pemahaman mendalam terhadap faktor-faktor yang mempengaruhi kualitas air menjadi krusial dalam menentukan apakah air tersebut aman untuk dikonsumsi oleh manusia. Keberhasilan proyek ini dapat menciptakan dampak positif yang signifikan, baik dari segi kesehatan masyarakat, ekonomi, bisnis, maupun lingkungan. Beberapa dampak dari hasil proyek ini meliputi:
 1. Kesehatan Masyarakat. Dengan adanya prediksi kualitas air yang lebih akurat, masyarakat dapat menghindari konsumsi air yang terkontaminasi, mengurangi risiko penyakit diare, dan meningkatkan kesehatan secara keseluruhan.
 
 2. Ekonomi dan Bisnis. Otoritas pengelola air dapat merencanakan dan mengelola sumber daya air dengan lebih efisien, mengurangi biaya pemeliharaan dan pemulihan akibat pencemaran.
@@ -32,7 +32,14 @@ Ukuran yang akan diterapkan pada proyek ini untuk memutuskan apakah air layak di
 - Membuat model machine learning yang dapat memprediksi apakah air layak diminum atau tidak berdasarkan fitur-fitur yang ada.
 
 ## Data Understanding
-Data yang digunakan untuk proyek ini diambil dari [Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability). Data ini memiliki 3277 sample dan merupakan data numerik. Untuk korelasi dari setiap variabel dapat dilihat dari gambar dibawah ini.
+Data yang digunakan untuk proyek ini diambil dari [Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability). Berikut beberapa informasi pada dataset :
+
+- Dataset memiliki format CSV (Comma-Seperated Values).
+- Dataset memiliki 3277 sample dengan 10 fitur.
+- Dataset memiliki 9 fitur bertipe float64 dan 1 fitur bertipe int64.
+- Terdapat banyak missing value dalam dataset.
+
+Untuk korelasi dari setiap variabel dapat dilihat dari gambar dibawah ini.
 ![korelasi antar variabel](https://github.com/salsabilar311/Predictive-Analytics_Water-Quality/assets/98375087/1923d7f6-ed65-43fe-a604-5ab3e20e397a)
 
 Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki relasi yang lemah terhadap potability. Sedangkan parameter lainnya memiliki relasi yang relatif sama terhadap potability. Hal ini menunjukkan bahwa, meskipun kedua parameter tersebut dapat memberikan informasi tentang sifat fisik dan kimia air, kontribusinya terhadap kelayakan air minum mungkin tidak begitu dominan dibandingkan dengan parameter lain seperti pH, hardness, dan kloramin. Oleh karena itu, dalam pengembangan model machine learning untuk memprediksi kelayakan minum air, perlu mempertimbangkan dengan cermat bobot atau signifikansi relatif dari masing-masing parameter. Selain itu, analisis ini dapat memberikan dorongan untuk lebih mendalam memahami faktor-faktor yang memengaruhi kelayakan air minum. Analisis antar variabel:
@@ -55,13 +62,13 @@ Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki 
 ## Data Preparation
 - Membuang missing value
 
-  Pada tahap pre-processing data, akan dilakukan penghapusan terhadup nilai yang nulll. Hal ini dilakukan agar tidak mempengaruhi kualitas model pada saat melakukan prediksi.
+  Pada tahap pre-processing data, akan dilakukan penghapusan terhadap nilai yang nulll. Hal ini dilakukan agar tidak mempengaruhi kualitas model pada saat melakukan prediksi. Penghapusan missing value dilakukan untuk semua fitur. Setelah dilakukan penghapusan sample data berkurang menjadi 2011. Ini merupakan penurunan yang sangat besar dan dapat menunjukkan juga bahwa data memiliki banyak missing value.
 - Menghapus outlier
 
-   Pada tahap ini, menganalisis distribusi data dan mengidentifikasi serta menghapus outlier dari variabel-variabel numeric. Hal ini dilakukan agar model dapat meningkatkan akurasi. Teknik yang dipakai untuk menghapus outlier adalah dengan menggunakan IQR. Pada dasarnya teknik ini akan menghapus nilai yang berada di luar ambang batas. 
+   Pada tahap ini, menganalisis distribusi data dan mengidentifikasi serta menghapus outlier dari variabel-variabel numeric. Hal ini dilakukan agar model dapat meningkatkan akurasi. Teknik yang dipakai untuk menghapus outlier adalah dengan menggunakan IQR. Pada dasarnya teknik ini akan menghapus nilai yang berada di luar ambang batas. Penghapusan outlier dilakukan untuk semua variabel. Setelah dilakukan penghapusan sample data berubah menjadi 1794.
 - Pembagian dataset dengan fungsi train_test_split dari library sklearn.
 
-  Pada tahap ini dataset akan menjadi dua bagian yaitu train set (untuk melatih model) dan test set (untuk menguji model). Ini membantu menilai sejauh mana model dapat umum digunakan pada data baru.
+  Pada tahap ini dataset akan menjadi dua bagian yaitu train set (untuk melatih model) dan test set (untuk menguji model). Ini membantu menilai sejauh mana model dapat umum digunakan pada data baru. Pembagian data yang terjadi pada proyek ini adalah 1614 untuk training dan 180 untuk testing.
 - Normalisasi menggunakan StandardScaler
 
   Pada langkah ini, data akan dinormalisasi menggunakan StandardScaler agar setiap variabel memiliki skala yang serupa. Hal ini membantu untuk model melakukan prediksi. Langkah-langkah untuk melakukan normalisasi menggunakan standard scaler diantaranya yaitu:
@@ -71,17 +78,21 @@ Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki 
     3. Fit data pelatihan
     4. Transform data pelatihan
 
+    Setelah normalisasi data menjadi seragam dan dapat digunakan untuk melakukan prediksi.
+
 ## Modeling
 Pada proses modeling ini saya menggunakan 3 algoritma yaitu :
 1. KNN
 
-    KNN adalah metode klasifikasi berbasis instan yang bekerja dengan cara menemukan kelas mayoritas dari k tetangga terdekat suatu titik data yang belum diketahui kelasnya. KNN dipilih karena sifatnya yang non-parametrik dan mampu menangani pola kompleks dalam data tanpa membuat asumsi tertentu tentang distribusi data. Cocok untuk kasus ini karena dataset memiliki berbagai parameter kualitas air yang kompleks dan tidak memiliki asumsi tertentu.
+    KNN adalah metode klasifikasi berbasis instan yang bekerja dengan cara menemukan kelas mayoritas dari k tetangga terdekat suatu titik data yang belum diketahui kelasnya. KNN dipilih karena sifatnya yang non-parametrik dan mampu menangani pola kompleks dalam data tanpa membuat asumsi tertentu tentang distribusi data. Cocok untuk kasus ini karena dataset memiliki berbagai parameter kualitas air yang kompleks dan tidak memiliki asumsi tertentu. Parameter yang digunakan pada proyek ini adalah :
 
-2. Random forest
+     - ```n_neighbors=7```. Parameter tersebut menunjukkan jumlah k tetangga terdekat.
+
+3. Random forest
 
     Random Forest adalah metode ensemble yang menggabungkan beberapa model pohon keputusan untuk meningkatkan kinerja dan kestabilan prediksi. Random Forest dipilih karena sifatnya sebagai metode ensemble yang menggabungkan beberapa pohon keputusan. Mampu menangani data yang kompleks dan cenderung overfitting, sehingga dapat memberikan hasil yang lebih stabil dan akurat. Ini menjadikan model dapat memprediksi dataset dengan banyak parameter dan meningkatkan akurasi dari model. Cocok untuk kasus ini karena dataset dari proyek ini memiliki 10 parameter.
 
-3. Naive bayes
+4. Naive bayes
 
     Naive Bayes adalah metode klasifikasi berbasis probabilitas yang menggunakan teorema Bayes dengan asumsi independensi antar fitur. Naive Bayes dipilih karena kesederhanaannya dan ketangguhannya dalam menangani data dengan dimensi tinggi serta dapat memberikan hasil yang baik bahkan dengan asumsi independensi yang naif. Cocok dengan dataset yang memiliki sejumlah variabel penentu seperti proyek ini.
 
