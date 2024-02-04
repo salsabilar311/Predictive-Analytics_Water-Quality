@@ -55,7 +55,7 @@ Data yang digunakan untuk proyek ini diambil dari [Kaggle](https://www.kaggle.co
 - Potability: Menunjukkan apakah air aman untuk dikonsumsi manusia. Dapat diminum -1 dan Tidak dapat diminum -0
 
 Untuk korelasi dari setiap variabel dapat dilihat dari gambar dibawah ini.
-![korelasi antar variabel](https://drive.google.com/file/d/1LMf9q2RqieHbYnqVkv18vOmL5eTlyv4p/view?usp=drive_link)
+![korelasi antar variabel](https://github.com/salsabilar311/Predictive-Analytics_Water-Quality/blob/3279d7dbef25da50a66846826a95f035f267da69/korelasi%20antar%20variabel.png?raw=true)
 
 Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki relasi yang lemah terhadap potability. Sedangkan parameter lainnya memiliki relasi yang relatif sama terhadap potability. Hal ini menunjukkan bahwa, meskipun kedua parameter tersebut dapat memberikan informasi tentang sifat fisik dan kimia air, kontribusinya terhadap kelayakan air minum mungkin tidak begitu dominan dibandingkan dengan parameter lain seperti pH, hardness, dan kloramin. Oleh karena itu, dalam pengembangan model machine learning untuk memprediksi kelayakan minum air, perlu mempertimbangkan dengan cermat bobot atau signifikansi relatif dari masing-masing parameter. Selain itu, analisis ini dapat memberikan dorongan untuk lebih mendalam memahami faktor-faktor yang memengaruhi kelayakan air minum. Analisis antar variabel:
 
