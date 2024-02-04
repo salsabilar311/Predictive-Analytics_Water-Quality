@@ -3,7 +3,7 @@
 ## Domain Proyek
 
 Akses terhadap air minum yang aman sangat penting bagi kesehatan, karena air merupakan unsur vital yang dibutuhkan oleh tubuh untuk menjaga fungsi organ-organ, mengatur suhu tubuh, serta mendukung proses metabolisme. Ketersediaan air bersih dan aman juga merupakan faktor kunci dalam pencegahan penyebaran penyakit-penyakit yang terkait dengan air, seperti infeksi saluran pencernaan dan penyakit menular lainnya. Seperti yang dilansir dari [Kemendikbud](https://lldikti5.kemdikbud.go.id/home/detailpost/bahaya-konsumsi-air-yang-tidak-bersih) bahwa jika air yang tidak layak konsumsi akan membuat kondisi tubuh manusia rentan terserang penyakit, salah satunya diare. Oleh karena itu dibutuhkan upaya untuk mengatasi tantangan tersebut. 
-Disinilah peran proyek yang saya buat berfungsi, dengan fokus pada pengembangan model machine learning untuk memprediksi apakah kualitas air. Proyek ini sangat berguna bagi masyarakat. Diantaranya :
+Disinilah peran proyek yang ini berfungsi, dengan fokus pada pengembangan model machine learning untuk memprediksi apakah kualitas air. Proyek ini sangat berguna bagi masyarakat. Diantaranya :
 
 - Dengan memastikan akses terhadap air minum yang aman, proyek ini dapat secara langsung meningkatkan kesehatan masyarakat, mengurangi risiko penyakit terkait air.
 - Model dapat diterapkan secara berskala besar untuk memantau kualitas air di berbagai daerah, memberikan pemahaman yang lebih baik tentang kondisi air di suatu wilayah.
@@ -13,11 +13,14 @@ Model ini akan menggunakan dataset besar yang mencakup berbagai parameter kualit
 ## Business Understanding
 
 Proyek ini bertujuan untuk mengetahui faktor faktor yang mempengaruhi kualitas air. Faktor-faktor tersebut juga menentukan apakah air dapat dikonsumsi atau tidak oleh manusia. Sehingga, pemahaman mendalam terhadap faktor-faktor yang mempengaruhi kualitas air menjadi krusial dalam menentukan apakah air tersebut aman untuk dikonsumsi oleh manusia. Keberhasilan proyek ini dapat menciptakan dampak positif yang signifikan, baik dari segi kesehatan masyarakat, ekonomi, bisnis, maupun lingkungan. Beberapa dampak dari hasil proyek ini meliputi:
-1. Kesehatan Masyarakat. Dengan adanya prediksi kualitas air yang lebih akurat, masyarakat dapat menghindari konsumsi air yang terkontaminasi, mengurangi risiko penyakit diare, dan meningkatkan kesehatan secara keseluruhan.
+1. Kesehatan Masyarakat. Dengan adanya prediksi kualitas air yang lebih akurat, masyarakat dapat menghindari konsumsi air yang terkontaminasi, mengurangi risiko penyakit diare, dan meningkatkan kesehatan secara keseluruhan. Seperti yang dilansir dalam [expertindo](https://expertindo-training.com/pengaruh-kualitas-air-minum-terhadap-kesehatan-masyarakat/) bahwa
+    > Kualitas air minum memiliki hubungan krusial dengan kesehatan manusia, dan air yang terkontaminasi atau mengandung bahan kimia berbahaya dapat membawa risiko serius bagi kesejahteraan masyarakat. Air yang tercemar dapat mengandung berbagai mikroorganisme patogen seperti bakteri, virus, dan parasit. Saat diminum atau digunakan dalam kegiatan sehari-hari seperti mandi dan memasak, mikroorganisme ini dapat masuk ke dalam tubuh manusia dan menyebabkan infeksi saluran pencernaan seperti diare, kolera, dan tifus. Kontaminan kimia seperti logam berat (seperti timbal dan merkuri) atau bahan kimia industri yang mencemari air juga memiliki potensi berbahaya. Paparan berulang terhadap kontaminan semacam ini dapat menyebabkan keracunan, merusak organ vital seperti hati dan ginjal, dan bahkan meningkatkan risiko kanker.
 
-2. Ekonomi dan Bisnis. Otoritas pengelola air dapat merencanakan dan mengelola sumber daya air dengan lebih efisien, mengurangi biaya pemeliharaan dan pemulihan akibat pencemaran.
+    Oleh karena itu proyek ini dapat membantu untuk mencegah hal tersebut terjadi.
 
-3. Lingkungan. Dengan meminimalkan risiko kontaminasi air, proyek ini dapat membantu melestarikan ekosistem air, memelihara keanekaragaman hayati, dan mengurangi dampak negatif terhadap lingkungan.
+2. Ekonomi dan Bisnis. Otoritas pengelola air dapat merencanakan dan mengelola sumber daya air dengan lebih efisien, mengurangi biaya pemeliharaan dan pemulihan akibat pencemaran. Selain pengelolaan air, ternyata proyek ini berpengaruh yang signifikan terhadap ekonomi dan bisnis. Pencemaran air dapat menghambat pertumbuhan ekonomi global dan menurunkan produktivitas. Pabrik-pabrik dan bisnis yang bergantung pada pasokan air bersih dapat terganggu jika pasokan air tercemar atau terbatas. Seperti yang dilansir di [ekonomi.bisnis](https://ekonomi.bisnis.com/read/20190821/9/1139261/waduh-pencemaran-air-ternyata-bisa-hambat-pertumbuhan-ekonomi-global) bahwa “Memburuknya kualitas air menghambat pertumbuhan ekonomi, menurunkan kondisi kesehatan, mengurangi produksi pangan, dan memperburuk kemiskinan di banyak negara,” kata Presiden Bank Dunia David Malpass melalui sebuah pernyataan seperti dikutip Bisnis.com, Rabu (21/8/2019). Oleh karena itu diharapkan proyek ini dapat membantu meningkatkan pertumbuhan ekonomi.
+
+3. Lingkungan. Dengan meminimalkan risiko kontaminasi air, proyek ini dapat membantu melestarikan ekosistem air, memelihara keanekaragaman hayati, dan mengurangi dampak negatif terhadap lingkungan. Sehingga dengan adanya proyek ini dapat melestarikan lingkungan dengan memelihara keanekaragaman hayati. Karena pada dasarnya air sangat dibutuhkan oleh setiap mahluk hidup. Dengan adanya air bersih maka kualitas lingkungan akan terjaga.
 
 Ukuran yang akan diterapkan pada proyek ini untuk memutuskan apakah air layak diminum atau tidak dapat mencakup analisis beberapa parameter yang telah disebutkan. Standar kualitas air pada proyek ini akan berdasarkan standar untuk air minum umumnya yang ditetapkan oleh lembaga kesehatan, seperti Badan Kesehatan Dunia (WHO).
 
@@ -40,7 +43,8 @@ Data yang digunakan untuk proyek ini diambil dari [Kaggle](https://www.kaggle.co
 - Terdapat banyak missing value dalam dataset.
 
 Untuk korelasi dari setiap variabel dapat dilihat dari gambar dibawah ini.
-![korelasi antar variabel](https://github.com/salsabilar311/Predictive-Analytics_Water-Quality/assets/98375087/1923d7f6-ed65-43fe-a604-5ab3e20e397a)
+![korelasi antar variabel](https://github.com/salsabilar311/Predictive-Analytics_Water-Quality/assets/98375087/aec7a46b-6f38-4d1c-9b85-e6a26ffff233)
+
 
 Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki relasi yang lemah terhadap potability. Sedangkan parameter lainnya memiliki relasi yang relatif sama terhadap potability. Hal ini menunjukkan bahwa, meskipun kedua parameter tersebut dapat memberikan informasi tentang sifat fisik dan kimia air, kontribusinya terhadap kelayakan air minum mungkin tidak begitu dominan dibandingkan dengan parameter lain seperti pH, hardness, dan kloramin. Oleh karena itu, dalam pengembangan model machine learning untuk memprediksi kelayakan minum air, perlu mempertimbangkan dengan cermat bobot atau signifikansi relatif dari masing-masing parameter. Selain itu, analisis ini dapat memberikan dorongan untuk lebih mendalam memahami faktor-faktor yang memengaruhi kelayakan air minum. Analisis antar variabel:
 
@@ -62,13 +66,13 @@ Dapat dilihat dari gambar diatas bahwa conductivity dan organic_carbon memiliki 
 ## Data Preparation
 - Membuang missing value
 
-  Pada tahap pre-processing data, akan dilakukan penghapusan terhadap nilai yang nulll. Hal ini dilakukan agar tidak mempengaruhi kualitas model pada saat melakukan prediksi. Penghapusan missing value dilakukan untuk semua fitur. Setelah dilakukan penghapusan sample data berkurang menjadi 2011. Ini merupakan penurunan yang sangat besar dan dapat menunjukkan juga bahwa data memiliki banyak missing value.
+  Pada tahap pre-processing data, akan dilakukan penghapusan terhadap nilai yang nulll. Hal ini dilakukan agar tidak mempengaruhi kualitas model pada saat melakukan prediksi. Dampak penghapusan missing value terhadap model ini adalah untuk memastikan kualitas dan kinerja model machine learning yang optimal. Karena dataset yang dimiliki oleh proyek ini memiliki banyak missing value. Oleh karena itu penting untuk dilakukan penghapusan missing value. Penghapusan missing value dilakukan untuk semua fitur. Setelah dilakukan penghapusan sample data berkurang menjadi 2011. Ini merupakan penurunan yang sangat besar dan dapat menunjukkan juga bahwa data memiliki banyak missing value.
 - Menghapus outlier
 
-   Pada tahap ini, menganalisis distribusi data dan mengidentifikasi serta menghapus outlier dari variabel-variabel numeric. Hal ini dilakukan agar model dapat meningkatkan akurasi. Teknik yang dipakai untuk menghapus outlier adalah dengan menggunakan IQR. Pada dasarnya teknik ini akan menghapus nilai yang berada di luar ambang batas. Penghapusan outlier dilakukan untuk semua variabel. Setelah dilakukan penghapusan sample data berubah menjadi 1794.
+   Pada tahap ini, menganalisis distribusi data dan mengidentifikasi serta menghapus outlier dari variabel-variabel numeric. Hal ini dilakukan agar model dapat meningkatkan akurasi. Penghapusan outlier sangat penting untuk model karena dapat mempengaruhi kinerja model machine learning. Apalagi dataset yang dimiliki pada proyek ini merupakan data numeric. Jadi sangat penting untuk dilakukan penghapusan outlier. Teknik yang dipakai untuk menghapus outlier adalah dengan menggunakan IQR. Pada dasarnya teknik ini akan menghapus nilai yang berada di luar ambang batas. Penghapusan outlier dilakukan untuk semua variabel. Setelah dilakukan penghapusan sample data berubah menjadi 1794.
 - Pembagian dataset dengan fungsi train_test_split dari library sklearn.
 
-  Pada tahap ini dataset akan menjadi dua bagian yaitu train set (untuk melatih model) dan test set (untuk menguji model). Ini membantu menilai sejauh mana model dapat umum digunakan pada data baru. Pembagian data yang terjadi pada proyek ini adalah 1614 untuk training dan 180 untuk testing.
+  Pada tahap ini dataset akan menjadi dua bagian yaitu train set (untuk melatih model) dan test set (untuk menguji model). Ini membantu menilai sejauh mana model dapat umum digunakan pada data baru. Pembagian data yang terjadi pada proyek ini adalah 1435 untuk training dan 359 untuk testing.
 - Normalisasi menggunakan StandardScaler
 
   Pada langkah ini, data akan dinormalisasi menggunakan StandardScaler agar setiap variabel memiliki skala yang serupa. Hal ini membantu untuk model melakukan prediksi. Langkah-langkah untuk melakukan normalisasi menggunakan standard scaler diantaranya yaitu:
@@ -88,18 +92,25 @@ Pada proses modeling ini saya menggunakan 3 algoritma yaitu :
 
      - ```n_neighbors=7```. Parameter tersebut menunjukkan jumlah k tetangga terdekat.
 
-3. Random forest
+    Kinerja model ini terhadap dataset yang ada cukup baik karena memiliki accuracy sebesar 56.54. Tapi recall yang didapatkan sangat memuaskan yaitu 94.81. Ini menunjukkan bahwa meskipun model mungkin tidak selalu akurat dalam memprediksi keseluruhan sampel, namun mampu mengidentifikasi sebagian besar instance yang sebenarnya positif.
 
-    Random Forest adalah metode ensemble yang menggabungkan beberapa model pohon keputusan untuk meningkatkan kinerja dan kestabilan prediksi. Random Forest dipilih karena sifatnya sebagai metode ensemble yang menggabungkan beberapa pohon keputusan. Mampu menangani data yang kompleks dan cenderung overfitting, sehingga dapat memberikan hasil yang lebih stabil dan akurat. Ini menjadikan model dapat memprediksi dataset dengan banyak parameter dan meningkatkan akurasi dari model. Cocok untuk kasus ini karena dataset dari proyek ini memiliki 10 parameter.
+2. Random forest
 
-4. Naive bayes
+    Random Forest adalah metode ensemble yang menggabungkan beberapa model pohon keputusan untuk meningkatkan kinerja dan kestabilan prediksi. Random Forest dipilih karena sifatnya sebagai metode ensemble yang menggabungkan beberapa pohon keputusan. Mampu menangani data yang kompleks dan cenderung overfitting, sehingga dapat memberikan hasil yang lebih stabil dan akurat. Ini menjadikan model dapat memprediksi dataset dengan banyak parameter dan meningkatkan akurasi dari model. Cocok untuk kasus ini karena dataset dari proyek ini memiliki 10 parameter. Kinerja model ini terhadap dataset yang ada cukup baik karena memiliki accuracy sebesar 59.05. Tapi recall yang didapatkan sangat memuaskan dengan nilai yang sempurna yaitu 100. Ini menunjukkan bahwa meskipun model mungkin tidak selalu akurat dalam memprediksi keseluruhan sampel, namun mampu mengidentifikasi semua instance yang sebenarnya positif.
 
-    Naive Bayes adalah metode klasifikasi berbasis probabilitas yang menggunakan teorema Bayes dengan asumsi independensi antar fitur. Naive Bayes dipilih karena kesederhanaannya dan ketangguhannya dalam menangani data dengan dimensi tinggi serta dapat memberikan hasil yang baik bahkan dengan asumsi independensi yang naif. Cocok dengan dataset yang memiliki sejumlah variabel penentu seperti proyek ini.
+3. Naive bayes
+
+    Naive Bayes adalah metode klasifikasi berbasis probabilitas yang menggunakan teorema Bayes dengan asumsi independensi antar fitur. Naive Bayes dipilih karena kesederhanaannya dan ketangguhannya dalam menangani data dengan dimensi tinggi serta dapat memberikan hasil yang baik bahkan dengan asumsi independensi yang naif. Cocok dengan dataset yang memiliki sejumlah variabel penentu seperti proyek ini. Kinerja model ini terhadap dataset yang ada cukup baik karena memiliki accuracy sebesar 40.94. Hasil yang didapatkan oleh model ini tidak terlalu baik dibandingkan 2 model sebelumnya.
 
 ## Evaluation
 Metrik evaluasi yang digunakan adalah akurasi. Karena ini merupakan masalah klasifikasi jadi saya menggunakan akurasi sebagai metrik evaluasi. Berdasarkan proses modeling didapat hasil:
 | KNN | Random Forest | Naive Bayes |
 |:--------------:|:--------------:|:--------------:|
-| 0.57 | 0.58    | 0.41   |
+| 56.54 | 59.05   | 40.94  |
 
-Dapat dilihat dari tabel diatas bahwa algoritma random forest memiliki skor akurasi yang terbesar yaitu **0.58**. Skor akurasi Random Forest 0.58, artinya 58% dari total prediksi yang dilakukan oleh model Random Forest benar. Oleh karena itu random forest adalah algoritma yang akan digunakan untuk melakukan prediksi selanjutnya. Namun, untuk pengembangan proyek lebih lanjut, diperlukan evaluasi yang lebih mendalam terhadap kinerja model random forest ini. Meskipun skor akurasi dapat memberikan gambaran umum tentang seberapa baik model melakukan prediksi, beberapa metrik evaluasi tambahan perlu dipertimbangkan. Seperti precision, recall, dan F1-score. Dan perlu diselidiki juga mengapa performa Naive Bayes kurang  memuaskan. Apakah asumsi independensi dalam Naive Bayes sesuai dengan karakteristik data proyek ini. Untuk mengetahui hal itu diperlukan peninjauan terhadap confusion matrix yang dapat memberikan informasi lebih rinci tentang performa model, terutama dalam hal false positives dan false negatives.
+Dapat dilihat dari tabel diatas bahwa algoritma random forest memiliki skor akurasi yang terbesar yaitu **59.05**. Skor akurasi Random Forest 59.05, artinya 59% dari total prediksi yang dilakukan oleh model Random Forest benar. Oleh karena itu random forest adalah algoritma yang akan digunakan untuk melakukan prediksi selanjutnya. Namun, untuk pengembangan proyek lebih lanjut, diperlukan evaluasi yang lebih mendalam terhadap kinerja model random forest ini. Meskipun skor akurasi dapat memberikan gambaran umum tentang seberapa baik model melakukan prediksi, beberapa metrik evaluasi tambahan perlu dipertimbangkan. Seperti precision, recall, dan F1-score. Karena score recall memiliki score yang lumayan tinggi maka model mungkin perlu menimbangkan recall sebagai metrik evaluasi. Seperti yang dapat dilihat dari tabel dibawah ini.
+| KNN | Random Forest | Naive Bayes |
+|:--------------:|:--------------:|:--------------:|
+| 94.81| 100   | 0  |
+
+Jika dilihat dari tabel diatas algoritma random forest memiliki score yang paling tinggi yaitu 100. Dapat dilihat juga bahwa naive bayes menghasilkan recall sebesar 0. Yang mengindikasikan alasan mengapa performa naive bayes kurang memuaskan. Adalah karena model ini gagal mengidentifikasi setiap instance positif dalam dataset. Recall yang rendah seperti ini dapat disebabkan oleh beberapa faktor, seperti distribusi kelas yang tidak seimbang atau kurangnya fitur yang dapat membedakan antara kelas. 
